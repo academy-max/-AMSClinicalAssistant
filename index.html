@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12372a">
+<title>AMS Clinical Assistant™ v2.0</title>
+<style>
+:root{--bg:#f4f7f5;--card:#fff;--ink:#183026;--muted:#607168;--line:#d9e4de;--brand:#12372a;--brand2:#2f6b50;--red:#b42318;--redbg:#fee4e2;--yellow:#8a6100;--yellowbg:#fff1c2;--green:#18794e;--greenbg:#dff7e9;--blue:#175cd3;--bluebg:#e7f0ff;--purple:#6941c6;--purplebg:#f1ebff;--shadow:0 10px 30px rgba(18,55,42,.09)}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+header{background:linear-gradient(135deg,#12372a,#285c46);color:#fff;padding:26px 18px 22px}
+header .wrap,main{max-width:920px;margin:auto} h1{margin:3px 0;font-size:clamp(1.9rem,7vw,2.8rem);letter-spacing:-.04em}
+.eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.09em;margin:0;opacity:.84}.subtitle{margin:4px 0}.creator{font-size:.84rem;margin:12px 0 0;opacity:.92}
+main{padding:18px 15px 38px}.view{display:none}.view.active{display:block}.panel,.module{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:var(--shadow);margin:14px 0}
+.notice{background:#eef5f1;border:1px solid #cedfd5;border-radius:15px;padding:14px 16px}.modules{display:grid;gap:14px;margin:18px 0}
+.module{width:100%;text-align:left;cursor:pointer;color:var(--ink);border-left-width:7px}.module:nth-child(1){border-left-color:var(--yellow)}.module:nth-child(2){border-left-color:var(--purple)}.module:nth-child(3){border-left-color:var(--blue)}
+.module h2{margin:4px 0;font-size:1.42rem}.module p{margin:0;color:var(--muted)}.module small{font-weight:900;letter-spacing:.08em;color:var(--brand2)}
+button{font:inherit}.primary,.secondary,.ghost,.choice{border-radius:12px;padding:12px 14px;font-weight:850;cursor:pointer}.primary{background:var(--brand);color:#fff;border:1px solid var(--brand)}.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}.ghost{background:transparent;color:var(--brand);border:1px solid #b8cbc0}
+.top,.actions{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin:12px 0}.actions{justify-content:flex-start}
+.progress{height:8px;background:#dce7e1;border-radius:999px;overflow:hidden}.bar{height:100%;width:0;background:var(--brand2);transition:.25s}
+.step{font-size:.75rem;font-weight:900;letter-spacing:.08em;color:var(--brand2);text-transform:uppercase}.question h2{font-size:1.45rem;line-height:1.2;margin:7px 0 10px}
+.criteria{background:#f7faf8;border:1px solid var(--line);padding:13px;border-radius:14px;margin:12px 0}.criteria ul{margin:7px 0;padding-left:20px}
+.choices{display:grid;gap:10px}.choice{text-align:left;background:#fff;border:2px solid #d4e0d9;color:var(--ink);min-height:68px}.choice:hover{border-color:var(--brand2)}.choice strong,.choice span{display:block}.choice span{font-weight:500;color:var(--muted);font-size:.88rem;margin-top:3px}
+.badge{display:inline-block;border-radius:999px;padding:6px 10px;font-size:.78rem;font-weight:900;background:#eef5f1;color:var(--brand2)}.result{border-radius:16px;padding:16px;margin-bottom:14px}.red{background:var(--redbg);color:var(--red)}.yellow{background:var(--yellowbg);color:var(--yellow)}.green{background:var(--greenbg);color:var(--green)}.blue{background:var(--bluebg);color:var(--blue)}.purple{background:var(--purplebg);color:var(--purple)}
+.grid{display:grid;gap:10px}.item{background:#f7faf8;border-radius:12px;padding:12px}.item strong{display:block;color:var(--brand2)}.pearl{background:#fff8df;border:1px solid #efd678;border-radius:14px;padding:14px;margin-top:14px}
+label{font-size:.82rem;font-weight:850;color:var(--muted)}input,select,textarea{width:100%;padding:11px;border:1px solid #c9d7cf;border-radius:11px;margin-top:5px;font:inherit;background:#fff}.form{display:grid;gap:11px}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:18px}.hidden{display:none!important}
+@media(min-width:720px){.modules{grid-template-columns:repeat(3,1fr)}.form{grid-template-columns:repeat(2,1fr)}}
+@media print{header,.top,.actions,footer,.progress{display:none!important}body{background:#fff}.view{display:none!important}#result.active{display:block!important}.panel{box-shadow:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<p class="eyebrow">NURSING HOME ANTIMICROBIAL STEWARDSHIP</p>
+<h1>AMS Clinical Assistant™</h1>
+<p class="subtitle">One Minute • One Decision • One Action</p>
+<p class="creator">Created by <strong>Leopoldo Córdova Romero, MD</strong><br>Infectious Diseases Specialist</p>
+</div></header>
+
+<main>
+<section id="home" class="view active">
+<div class="notice"><strong>Choose the clinical decision you need now.</strong><br>Complete one guided pathway and finish with a clear action, SBAR summary, and documentation note.</div>
+
+<div class="modules">
+<button class="module" data-module="m1"><small>MODULE 1</small><h2>New Resident Assessment</h2><p>Identify instability, minimum clinical criteria, testing, observation, or escalation.</p></button>
+<button class="module" data-module="m2"><small>MODULE 2</small><h2>Differential Diagnosis</h2><p>Compare infection with common mimics before ordering tests or antibiotics.</p></button>
+<button class="module" data-module="m3"><small>MODULE 3</small><h2>Rational Antibiotic Use</h2><p>Perform the 48–72-hour timeout and choose one final antibiotic action.</p></button>
+</div>
+
+<section class="panel">
+<h2>Resident / Evaluation Information</h2>
+<p>Optional. These fields are inserted into the generated clinical note.</p>
+<div class="form">
+<label>Resident initials<input id="resident" maxlength="8" placeholder="e.g., AB"></label>
+<label>Facility name<input id="facility" placeholder="Facility"></label>
+<label>Evaluation date and time<input id="date" type="datetime-local"></label>
+<label>Clinician name<input id="clinician" placeholder="NP / clinician"></label>
+</div>
+</section>
+</section>
+
+<section id="tool" class="view">
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div class="top"><button id="back" class="ghost">← Back</button><button id="homeBtn" class="ghost">Home</button></div>
+<section id="question" class="panel question"></section>
+</section>
+
+<section id="result" class="view">
+<div class="top"><button id="resultHome" class="ghost">Home</button><button id="restart" class="ghost">Start another</button></div>
+<section id="resultCard" class="panel"></section>
+<section id="noteCard" class="panel"></section>
+<div class="actions"><button id="copy" class="primary">Copy note</button><button onclick="window.print()" class="secondary">Print / Save PDF</button><button id="share" class="secondary">Share</button></div>
+</section>
+</main>
+
+<footer>Educational clinical decision support for trained nursing-home clinicians. Follow facility policy, resident-specific orders, local antibiogram, allergies, renal function, and emergency protocols.</footer>
+
+<script>
+const S={module:null,node:null,history:[],answers:[],result:null};
+const $=x=>document.querySelector(x), views={home:$('#home'),tool:$('#tool'),result:$('#result')};
+const show=v=>{Object.values(views).forEach(x=>x.classList.remove('active'));views[v].classList.add('active');scrollTo(0,0)};
+const data={
+m1_start:{step:'Module 1 · Step 1',title:'Is the resident clinically unstable or is sepsis suspected?',criteria:['Rapid deterioration','Hypotension or poor perfusion','New/worsening hypoxemia','Rigors','Markedly decreased responsiveness'],choices:[
+['YES — unstable','Escalate immediately and follow emergency protocol',null,'m1_red'],['NO — stable','Continue to syndrome assessment','m1_syn']]},
+m1_syn:{step:'Module 1 · Step 2',title:'Which syndrome is the primary concern?',choices:[
+['Urinary','Localizing urinary symptoms or systemic signs','m1_uti'],['Respiratory','New cough, dyspnea, hypoxemia, or abnormal lung findings','m1_resp'],['Skin / wound','New erythema, warmth, pain, purulence, or spreading inflammation','m1_skin'],['Nonspecific change','Confusion, fatigue, poor intake, or functional decline alone','m1_non']]},
+m1_uti:{step:'Module 1 · Urinary',title:'Are minimum clinical criteria for symptomatic UTI present?',criteria:['Acute dysuria, OR','Fever/systemic signs plus new urinary localizing features','Do not use cloudy or foul-smelling urine alone'],choices:[
+['YES','Obtain appropriate urine testing and communicate before antibiotics when stable',null,'m1_yellow_uti'],['NO','Observe and assess noninfectious causes; avoid urine culture for nonspecific change alone',null,'m1_green']]},
+m1_resp:{step:'Module 1 · Respiratory',title:'Are new respiratory findings present?',criteria:['New/worsening cough or dyspnea','Tachypnea or hypoxemia','Fever plus focal lung findings','Consider CHF, aspiration pneumonitis, COPD/asthma, viral illness'],choices:[
+['YES','Targeted exam/testing and SBAR; escalate if oxygen need or distress increases',null,'m1_yellow_resp'],['NO','Observe and reassess; investigate noninfectious causes',null,'m1_green']]},
+m1_skin:{step:'Module 1 · Skin / Wound',title:'Is there evidence of spreading cellulitis or deeper infection?',criteria:['Expanding erythema/warmth/tenderness','Purulence or fluctuance','Necrosis, crepitus, severe pain, systemic instability'],choices:[
+['YES','Assess source control, depth, and need for urgent escalation',null,'m1_yellow_skin'],['NO','Use local wound care and monitoring; colonization alone is not infection',null,'m1_green']]},
+m1_non:{step:'Module 1 · Nonspecific Change',title:'Is there a localizing infectious symptom or objective instability?',criteria:['Delirium alone is not proof of UTI','Review medications, dehydration, constipation, retention, pain, hypoxia, glucose, and environment'],choices:[
+['YES','Return to the relevant syndrome pathway','m1_syn'],['NO','Observe, investigate alternate causes, and reassess',null,'m1_green']]},
+
+m2_start:{step:'Module 2 · Step 1',title:'Select the clinical comparison that best matches the resident.',choices:[
+['UTI vs asymptomatic bacteriuria','Positive urine findings with or without localizing symptoms','m2_uti'],['Pneumonia vs CHF / aspiration pneumonitis','Respiratory symptoms with competing diagnoses','m2_pna'],['Cellulitis vs stasis dermatitis','Red lower extremity or chronic edema','m2_skin']]},
+m2_uti:{step:'Module 2 · UTI Differential',title:'Does the resident have new localizing urinary symptoms or compatible systemic signs?',criteria:['Dysuria, urgency/frequency, suprapubic pain, flank pain','Fever or instability with no better source','Pyuria/bacteriuria commonly occur without infection'],choices:[
+['YES — compatible syndrome','Treat the resident, not the urinalysis; obtain a proper specimen when indicated',null,'m2_uti_yes'],['NO — no localizing syndrome','Likely asymptomatic bacteriuria; search for another cause',null,'m2_uti_no']]},
+m2_pna:{step:'Module 2 · Respiratory Differential',title:'Which pattern is most prominent?',criteria:['Pneumonia: fever, new cough, focal findings, purulent sputum, hypoxemia','CHF: orthopnea, edema, weight gain, bilateral crackles','Aspiration pneumonitis: witnessed aspiration and abrupt symptoms; may improve without antibiotics'],choices:[
+['Focal infectious pattern','Pneumonia more likely; use targeted testing and severity assessment',null,'m2_pna_yes'],['Volume-overload pattern','CHF more likely; evaluate fluid status and cardiac treatment',null,'m2_chf'],['Abrupt post-aspiration pattern','Supportive care and close reassessment unless bacterial infection evolves',null,'m2_asp']]},
+m2_skin:{step:'Module 2 · Skin Differential',title:'Is the erythema acute, unilateral, warm, tender, and expanding?',criteria:['Cellulitis is commonly unilateral and acute','Stasis dermatitis is often bilateral, chronic, pruritic/scaly, with edema','Purulence suggests abscess and need for source control'],choices:[
+['YES — cellulitis pattern','Assess severity, borders, purulence, and need for antibiotics/source control',null,'m2_cell'],['NO — chronic/bilateral pattern','Stasis dermatitis or another mimic is more likely',null,'m2_stasis']]},
+
+m3_start:{step:'Module 3 · Step 1',title:'At 48–72 hours, does the resident still meet minimum syndrome criteria?',choices:[
+['NO','Stop the antibiotic; document alternate diagnosis and monitoring plan',null,'m3_stop'],['YES','Continue to response assessment','m3_response']]},
+m3_response:{step:'Module 3 · Step 2',title:'Is there clear clinical improvement?',criteria:['Vitals stable','Symptoms/function improving','No new sepsis signs'],choices:[
+['YES','Review results and narrow therapy','m3_results'],['NO','Re-evaluate diagnosis and source control','m3_notbetter']]},
+m3_results:{step:'Module 3 · Step 3',title:'Are results available to refine therapy?',criteria:['Culture/susceptibility','Viral PCR','Wound assessment','C. difficile testing when appropriate'],choices:[
+['YES','Choose the narrowest effective final action','m3_action'],['NO, but infection remains likely','Continue temporarily with provisional stop date and reassessment',null,'m3_continue']]},
+m3_notbetter:{step:'Module 3 · Step 3',title:'Is there an uncontrolled source or a more likely alternative diagnosis?',criteria:['Retention/obstruction','Abscess, necrosis, deep wound','Aspiration or noninfectious lung disease','Medication/laxative diarrhea','Poor specimen or resistant organism'],choices:[
+['YES','Source control / urgent re-evaluation',null,'m3_source'],['UNCERTAIN','Escalate diagnostic review; avoid automatic broadening',null,'m3_review']]},
+m3_action:{step:'Module 3 · Final Action',title:'Select ONE final antibiotic action.',choices:[
+['STOP','No bacterial indication or adequate course completed',null,'m3_stop'],['DE-ESCALATE','Narrow spectrum based on syndrome/results',null,'m3_deesc'],['CHANGE','Correct drug for organism, site, allergy, interaction, or renal function',null,'m3_change'],['IV → PO','Clinically improving and able to absorb oral therapy',null,'m3_ivpo'],['CONTINUE','Document indication, dose, route, and explicit stop date',null,'m3_continue']]}
+};
+const results={
+m1_red:['red','RED — URGENT ESCALATION','Possible sepsis or clinical instability. Activate facility emergency response, notify responsible clinician, and arrange higher-level evaluation as indicated.'],
+m1_yellow_uti:['yellow','YELLOW — TARGETED UTI EVALUATION','Compatible symptoms are present. Obtain a properly collected urine specimen when indicated, assess severity, and communicate using SBAR.'],
+m1_yellow_resp:['yellow','YELLOW — TARGETED RESPIRATORY EVALUATION','Assess oxygenation, severity, viral testing, chest imaging when appropriate, and competing diagnoses before antibiotics.'],
+m1_yellow_skin:['yellow','YELLOW — SKIN / WOUND EVALUATION','Define extent, depth, purulence, and source-control needs. Escalate rapidly for necrosis, severe pain, or systemic instability.'],
+m1_green:['green','GREEN — OBSERVE AND REASSESS','Minimum clinical criteria are not met. Avoid reflex antibiotics, address alternate causes, monitor, and define return precautions.'],
+m2_uti_yes:['purple','UTI IS PLAUSIBLE','Localizing symptoms support a urinary syndrome. Interpret UA/culture only in clinical context and reassess at 48–72 hours.'],
+m2_uti_no:['green','ASYMPTOMATIC BACTERIURIA MORE LIKELY','Do not treat bacteriuria or pyuria alone. Investigate other causes of the resident’s change.'],
+m2_pna_yes:['purple','PNEUMONIA MORE LIKELY','Use objective respiratory findings, severity assessment, and targeted diagnostics. Distinguish bacterial disease from viral illness.'],
+m2_chf:['green','CHF / VOLUME OVERLOAD MORE LIKELY','Prioritize fluid-status and cardiac assessment. Antibiotics are not indicated without a compatible infectious syndrome.'],
+m2_asp:['yellow','ASPIRATION PNEUMONITIS POSSIBLE','Provide supportive care and reassess trajectory. Antibiotics are not automatic after aspiration unless bacterial infection develops.'],
+m2_cell:['purple','CELLULITIS PATTERN','Document borders, severity, purulence, and systemic findings. Drainage/source control may be more important than broader antibiotics.'],
+m2_stasis:['green','STASIS DERMATITIS / MIMIC MORE LIKELY','Manage edema and skin inflammation; avoid antibiotics unless an acute unilateral infectious pattern emerges.'],
+m3_stop:['green','FINAL ACTION — STOP','No ongoing bacterial indication or adequate therapy completed. Document the stop decision and monitoring plan.'],
+m3_deesc:['blue','FINAL ACTION — DE-ESCALATE','Use the narrowest effective agent based on syndrome, microbiology, allergies, renal function, and local susceptibility.'],
+m3_change:['yellow','FINAL ACTION — CHANGE','Correct therapy based on organism, site, clinical response, interaction, allergy, renal function, or diagnostic revision.'],
+m3_ivpo:['blue','FINAL ACTION — IV TO PO','Convert to an effective oral agent when clinically stable, improving, and able to absorb oral medication.'],
+m3_continue:['blue','FINAL ACTION — CONTINUE WITH STOP DATE','Continuation must include documented indication, dose, route, planned duration, and a specific reassessment/stop date.'],
+m3_source:['red','SOURCE CONTROL / URGENT RE-EVALUATION','Investigate obstruction, abscess, necrosis, deep infection, device issue, or another uncontrolled source.'],
+m3_review:['yellow','DIAGNOSTIC REVIEW REQUIRED','Do not broaden automatically. Reassess diagnosis, specimen quality, imaging, source, adverse effects, and goals of care.']
+};
+function begin(m){S.module=m;S.history=[];S.answers=[];go(m+'_start')}
+function go(n){S.node=n;render()}
+function render(){show('tool');const n=data[S.node];$('#bar').style.width=((S.history.length+1)/5*100)+'%';
+let c=`<div class="step">${n.step}</div><h2>${n.title}</h2>`;
+if(n.criteria)c+=`<div class="criteria"><strong>Consider:</strong><ul>${n.criteria.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+c+=`<div class="choices">${n.choices.map((x,i)=>`<button class="choice" data-i="${i}"><strong>${x[0]}</strong><span>${x[1]}</span></button>`).join('')}</div>`;
+$('#question').innerHTML=c;document.querySelectorAll('.choice').forEach(b=>b.onclick=()=>choose(+b.dataset.i))}
+function choose(i){const n=data[S.node],x=n.choices[i];S.history.push(S.node);S.answers.push(n.title+': '+x[0]);if(x[3])finish(x[3]);else go(x[2])}
+function finish(k){S.result=k;show('result');const r=results[k];
+$('#resultCard').innerHTML=`<span class="badge">${S.module.toUpperCase()}</span><div class="result ${r[0]}"><h2>${r[1]}</h2><p>${r[2]}</p></div>
+<div class="pearl"><strong>Clinical Pearl</strong>Antibiotic decisions should be driven by the resident’s syndrome, objective findings, trajectory, microbiology, goals of care, and explicit reassessment—not by a test result alone.</div>`;
+const info={resident:$('#resident').value||'Not entered',facility:$('#facility').value||'Not entered',date:$('#date').value||new Date().toLocaleString(),clinician:$('#clinician').value||'Not entered'};
+const note=`AMS Clinical Assistant™
+Resident: ${info.resident}
+Facility: ${info.facility}
+Date/time: ${info.date}
+Clinician: ${info.clinician}
+
+Pathway: ${S.module.toUpperCase()}
+Decision trail:
+- ${S.answers.join('\n- ')}
+
+Final decision: ${r[1]}
+Plan: ${r[2]}
+
+SBAR
+S: Resident evaluated for a possible infection / antibiotic review.
+B: Nursing-home resident; relevant clinical history, allergies, renal function, recent antibiotics, cultures, devices, and goals of care should be reviewed.
+A: ${r[1]}. ${r[2]}
+R: Follow the documented plan, communicate changes, monitor defined clinical parameters, and reassess promptly if deterioration occurs.
+
+Educational clinical decision support. Follow facility policy and resident-specific orders.`;
+$('#noteCard').innerHTML=`<h2>Generated SBAR and Documentation</h2><div class="grid"><div class="item"><strong>Situation</strong>${r[1]}</div><div class="item"><strong>Assessment / Plan</strong>${r[2]}</div></div><textarea id="note" style="min-height:330px">${note}</textarea>`;
+}
+document.querySelectorAll('[data-module]').forEach(b=>b.onclick=()=>begin(b.dataset.module));
+$('#back').onclick=()=>{if(S.history.length){go(S.history.pop());S.answers.pop()}else show('home')};
+$('#homeBtn').onclick=$('#resultHome').onclick=()=>show('home');
+$('#restart').onclick=()=>begin(S.module);
+$('#copy').onclick=async()=>{await navigator.clipboard.writeText($('#note').value);alert('Clinical note copied.')};
+$('#share').onclick=async()=>{const text=$('#note').value;if(navigator.share)await navigator.share({title:'AMS Clinical Note',text});else{await navigator.clipboard.writeText(text);alert('Sharing is unavailable; note copied instead.')}};
+$('#date').value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);
+</script>
+</body>
+</html>
