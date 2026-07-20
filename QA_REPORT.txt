@@ -1,7 +1,0 @@
-PASS — 3 primary buttons connected
-PASS — New Infection opens Module 1
-PASS — Antibiotic Review opens Module 6
-PASS — Search Antibiotic opens Module 3
-PASS — 12 modules retained
-PASS — JavaScript syntax
-PASS — PWA files present
