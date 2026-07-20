@@ -1,29 +1,7 @@
-AMS CLINICAL ASSISTANT™ v3.0 — FINAL QA REPORT
-Date: July 18, 2026
-
-PASS — ZIP contains exactly 8 required root files.
-PASS — index.html present and readable.
-PASS — JavaScript syntax validated with Node.js.
-PASS — 12 modules defined.
-PASS — Module 3 includes Antibiotic Management Center.
-PASS — 25 antimicrobial monographs embedded.
-PASS — 10 syndrome algorithms embedded.
-PASS — Renal calculator validation included.
-PASS — 48–72 hour timeout workflow included.
-PASS — Clinical note/SBAR generation included.
-PASS — manifest.webmanifest, service worker, icons and .nojekyll included.
-PASS — Relative paths compatible with GitHub Pages.
-PASS — ZIP integrity verified.
-
-Clinical limitation:
-This is educational decision support. Institutional pharmacy and medical leadership must validate antimicrobial content, formulary alignment, local antibiogram, FDA labeling and facility policy before patient-care deployment.
-
-PASS — Print / Save PDF button repaired with dedicated print document and fallback.
-PASS — Service-worker cache version updated so the correction replaces the installed version.
-
-MODULE 12 REVIEW (2026-07-19)
-PASS — Generate current encounter note opens the note view.
-PASS — Decision-trail counter reflects the current encounter.
-PASS — Clear decision trail resets count and last assessment text.
-PASS — Clear button is disabled when there are no entries.
-PASS — Visible status confirmation after clearing.
+PASS — 3 primary buttons connected
+PASS — New Infection opens Module 1
+PASS — Antibiotic Review opens Module 6
+PASS — Search Antibiotic opens Module 3
+PASS — 12 modules retained
+PASS — JavaScript syntax
+PASS — PWA files present
