@@ -1,7 +1,13 @@
-PASS — 3 primary buttons connected
-PASS — New Infection opens Module 1
-PASS — Antibiotic Review opens Module 6
-PASS — Search Antibiotic opens Module 3
-PASS — 12 modules retained
-PASS — JavaScript syntax
-PASS — PWA files present
+AMS Clinical Assistant v3.1 — VERIFIED THREE-BUTTON HOME
+
+PASS — Home contains exactly 3 buttons.
+PASS — No module cards exist inside the Home section.
+PASS — NEW INFECTION opens Module 1.
+PASS — ANTIBIOTIC REVIEW opens Module 6.
+PASS — SEARCH ANTIBIOTIC opens Module 3.
+PASS — JavaScript syntax validation with Node.js.
+PASS — All 12 clinical modules retained in a secondary Clinical Tools screen.
+PASS — Service-worker cache version changed to force replacement of older pages.
+PASS — GitHub Pages relative paths retained.
+
+Important: after publishing, uninstall/delete any old Home Screen icon and first open the website in a Safari Private tab to avoid an older service-worker copy.

@@ -1,3 +1,6 @@
-AMS Clinical Assistant™ — Simple 3-Button Edition
+AMS Clinical Assistant v3.1
+Verified 3-button clinical home.
 
-Main screen: New Infection, Antibiotic Review, Search Antibiotic. Full tools remain under More clinical tools and reports. Upload all eight files to the root of the existing GitHub Pages repository.
+Upload every file in this folder directly to the root of the GitHub repository.
+Do not upload the folder itself.
+After commit, open the GitHub Pages URL in a private/incognito tab.

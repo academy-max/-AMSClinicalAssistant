@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#12372a"><title>AMS Clinical Assistant™ Simple</title>
+<meta name="theme-color" content="#12372a"><title>AMS Clinical Assistant™ — 3-Button Home</title>
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AMS Assistant">
 <style>
@@ -11,10 +11,23 @@
 @media(min-width:720px){.modules{grid-template-columns:repeat(3,1fr)}.form,.two{grid-template-columns:repeat(2,1fr)}.druglist{grid-template-columns:repeat(2,1fr)}}@media(min-width:980px){.modules{grid-template-columns:repeat(4,1fr)}}
 @media print{header,.top,.actions,.tabs,footer,#home{display:none!important}body{background:#fff}.view.active{display:block}.panel{box-shadow:none}}
 </style></head><body>
-<header><div class="wrap"><div class="eyebrow">NURSING HOME ANTIMICROBIAL STEWARDSHIP</div><h1>AMS Clinical Assistant™</h1><p>Simple clinical decisions for nursing-home care</p><p class="small">Created by <strong>Leopoldo Córdova Romero, MD</strong> · Educational decision support</p><div class="toolbar"><button id="installBtn" class="secondary hidden">Install App</button><button id="headerHome" class="secondary">Home</button></div></div></header>
+<header><div class="wrap"><div class="eyebrow">NURSING HOME ANTIMICROBIAL STEWARDSHIP</div><h1>AMS Clinical Assistant™</h1><div class="small" style="font-weight:900;margin-top:4px">Verified 3-Button Clinical Home · v3.1</div><p>Simple clinical decisions for nursing-home care</p><p class="small">Created by <strong>Leopoldo Córdova Romero, MD</strong> · Educational decision support</p><div class="toolbar"><button id="installBtn" class="secondary hidden">Install App</button><button id="headerHome" class="secondary">Home</button></div></div></header>
 <main>
-<section id="home" class="view active"><div class="home-title"><h2>What do you need right now?</h2><p>One patient • One minute • One decision</p></div><div class="quickstart"><button type="button" class="quickbtn new" id="quickNew" onclick="openModule('m1')"><span class="ico">✚</span><span><strong>NEW INFECTION</strong><span>Evaluate a resident with suspected infection</span></span></button><button type="button" class="quickbtn review" id="quickReview" onclick="openModule('m6')"><span class="ico">↻</span><span><strong>ANTIBIOTIC REVIEW</strong><span>Complete the 48–72 hour timeout</span></span></button><button type="button" class="quickbtn search" id="quickSearch" onclick="openModule('m3')"><span class="ico">⌕</span><span><strong>SEARCH ANTIBIOTIC</strong><span>Drug • Dose • Renal • Interactions</span></span></button></div><details class="tools"><summary>⚙ More clinical tools and reports</summary><div class="modules" id="moduleGrid"></div></details><details class="tools encounter-toggle"><summary>Resident / Encounter information</summary><section class="panel"><div class="form"><label>Resident initials<input id="resident" maxlength="10" placeholder="AB"></label><label>Facility / unit<input id="facility" placeholder="Facility / unit"></label><label>Date and time<input id="encDate" type="datetime-local"></label><label>Clinician<input id="clinician" placeholder="NP / clinician"></label><label>Allergies<input id="allergies" placeholder="Drug and reaction"></label><label>Goals of care<select id="goc"><option>Full treatment</option><option>Limited intervention</option><option>Comfort-focused</option><option>Not documented</option></select></label></div></section></details></section>
-<section id="moduleView" class="view"><div class="top"><button class="ghost" id="backHome">← Home</button><button class="ghost" id="clearEncounter">Start another</button></div><div id="moduleContent"></div></section>
+<section id="home" class="view active">
+  <div class="home-title"><h2>What do you need right now?</h2><p>One patient • One minute • One decision</p></div>
+  <div class="quickstart" aria-label="Primary clinical actions">
+    <button type="button" class="quickbtn new" id="quickNew"><span class="ico">✚</span><span><strong>NEW INFECTION</strong><span>Evaluate a resident with suspected infection</span></span></button>
+    <button type="button" class="quickbtn review" id="quickReview"><span class="ico">↻</span><span><strong>ANTIBIOTIC REVIEW</strong><span>Complete the 48–72 hour timeout</span></span></button>
+    <button type="button" class="quickbtn search" id="quickSearch"><span class="ico">⌕</span><span><strong>SEARCH ANTIBIOTIC</strong><span>Drug • Dose • Renal • Interactions</span></span></button>
+  </div>
+  <p class="small" style="text-align:center;margin-top:18px;color:var(--muted)">Version 3.1 · Three-button clinical home</p>
+</section>
+<section id="toolsView" class="view">
+  <div class="top"><button class="ghost" id="toolsHome">← Home</button></div>
+  <section class="panel"><h2>Clinical Tools</h2><p class="small">Advanced tools remain available without cluttering the home screen.</p><div class="modules" id="moduleGrid"></div></section>
+  <section class="panel"><h2>Resident / Encounter information</h2><div class="form"><label>Resident initials<input id="resident" maxlength="10" placeholder="AB"></label><label>Facility / unit<input id="facility" placeholder="Facility / unit"></label><label>Date and time<input id="encDate" type="datetime-local"></label><label>Clinician<input id="clinician" placeholder="NP / clinician"></label><label>Allergies<input id="allergies" placeholder="Drug and reaction"></label><label>Goals of care<select id="goc"><option>Full treatment</option><option>Limited intervention</option><option>Comfort-focused</option><option>Not documented</option></select></label></div></section>
+</section>
+<section id="moduleView" class="view"><div class="top"><button class="ghost" id="backHome">← Home</button><button class="ghost" id="openTools">Clinical tools</button><button class="ghost" id="clearEncounter">Start another</button></div><div id="moduleContent"></div></section>
 <section id="noteView" class="view"><div class="top"><button class="ghost" id="noteBack">← Back</button><button class="ghost" id="noteHome">Home</button></div><section class="panel"><h2>Generated Clinical Note / SBAR</h2><textarea id="noteText"></textarea><div class="actions"><button class="primary" id="copyNote">Copy note</button><button class="secondary" id="shareNote">Share</button><button class="secondary" id="printNote" type="button">Print / Save PDF</button></div></section></section>
 </main><footer>For trained clinicians. Follow resident-specific orders, emergency protocols, FDA labeling, local formulary, antibiogram, pharmacy review, and facility policy. This tool does not diagnose or prescribe.</footer>
 <script>
@@ -23,13 +36,20 @@ const SYNDROMES={"Lower UTI": {"criteria": "Acute dysuria, or fever/systemic fin
 const MODULES=[["m1", "New Resident Assessment", "Test, observe, escalate, and establish the syndrome."], ["m2", "Differential Diagnosis", "Compare infection with common mimics before antibiotics."], ["m3", "Antibiotic Management Center", "Open syndrome algorithms and complete antibiotic monographs."], ["m4", "Culture & Specimen Stewardship", "Decide when, how, and what to culture."], ["m5", "Renal & Medication Safety", "Calculate CrCl and identify high-risk interactions."], ["m6", "48–72 Hour Antibiotic Timeout", "Choose one final action: stop, narrow, change, IV→PO, or continue."], ["m7", "IV-to-PO Conversion", "Evaluate stability, absorption, and an active oral option."], ["m8", "C. difficile Assistant", "Assess testing, severity, treatment, isolation, and recurrence."], ["m9", "Source Control & Devices", "Evaluate catheters, wounds, obstruction, abscess, and hardware."], ["m10", "MDRO & Candida auris", "Separate colonization from infection and guide precautions."], ["m11", "Outbreak & Infection Prevention", "Respiratory, GI, scabies, and facility escalation workflow."], ["m12", "Documentation & AMS Metrics", "Generate SBAR, antibiotic note, and stewardship metrics."]];
 const $=s=>document.querySelector(s);
 const state={module:null,trail:[],selectedDrug:null,lastText:""};
-const views={home:$("#home"),module:$("#moduleView"),note:$("#noteView")};
+const views={home:$("#home"),tools:$("#toolsView"),module:$("#moduleView"),note:$("#noteView")};
 function show(v){Object.values(views).forEach(x=>x.classList.remove("active"));views[v].classList.add("active");scrollTo(0,0)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 function encounter(){return {resident:$("#resident").value||"Not entered",facility:$("#facility").value||"Not entered",date:$("#encDate").value||new Date().toLocaleString(),clinician:$("#clinician").value||"Not entered",allergies:$("#allergies").value||"Not entered",goc:$("#goc").value}}
 function addTrail(title,text){state.trail.push({title,text});state.lastText=text}
-function renderHome(){const grid=$("#moduleGrid");grid.innerHTML=MODULES.map((m,i)=>`<button class="module" data-mid="${m[0]}"><small>MODULE ${i+1}</small><h2>${m[1]}</h2><p>${m[2]}</p></button>`).join("");grid.querySelectorAll("[data-mid]").forEach(b=>b.onclick=()=>openModule(b.dataset.mid))}
-function wireQuickStart(){const qn=$("#quickNew"),qr=$("#quickReview"),qs=$("#quickSearch");if(qn)qn.onclick=()=>openModule("m1");if(qr)qr.onclick=()=>openModule("m6");if(qs)qs.onclick=()=>openModule("m3");}
+function renderHome(){
+ const grid=$("#moduleGrid");
+ grid.innerHTML=MODULES.map((m,i)=>`<button type="button" class="module" data-mid="${m[0]}"><small>MODULE ${i+1}</small><h2>${m[1]}</h2><p>${m[2]}</p></button>`).join("");
+ grid.querySelectorAll("[data-mid]").forEach(b=>b.addEventListener("click",()=>openModule(b.dataset.mid)));
+}
+function wireQuickStart(){
+ const actions={quickNew:"m1",quickReview:"m6",quickSearch:"m3"};
+ Object.entries(actions).forEach(([id,moduleId])=>{const el=$("#"+id);if(el)el.addEventListener("click",()=>openModule(moduleId));});
+}
 function openModule(id){state.module=id;show("module");const renderers={m1:renderM1,m2:renderM2,m3:renderM3,m4:renderM4,m5:renderM5,m6:renderM6,m7:renderM7,m8:renderM8,m9:renderM9,m10:renderM10,m11:renderM11,m12:renderM12};renderers[id]()}
 function shell(title,subtitle,body){$("#moduleContent").innerHTML=`<section class="panel"><span class="badge">${esc(title)}</span><h2>${esc(subtitle)}</h2>${body}</section>`}
 function choices(items,callback){setTimeout(()=>document.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>callback(b.dataset.choice)),0);return `<div class="grid">${items.map(x=>`<button class="choice" data-choice="${esc(x[0])}"><strong>${esc(x[0])}</strong><span>${esc(x[1])}</span></button>`).join("")}</div>`}
@@ -69,7 +89,7 @@ R — Follow the documented action; communicate changes; define monitoring param
 
 Educational decision support only. Confirm all medication orders with resident-specific clinical assessment, FDA labeling, pharmacy review, facility policy, and local susceptibility data.`;$("#noteText").value=note;show("note")}
 function resetEncounter(){["resident","facility","clinician","allergies"].forEach(id=>$("#"+id).value="");$("#goc").selectedIndex=0;$("#encDate").value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);state.trail=[];state.selectedDrug=null;state.lastText="";show("home")}
-$("#headerHome").onclick=$("#backHome").onclick=$("#noteHome").onclick=()=>show("home");$("#noteBack").onclick=()=>show("module");$("#clearEncounter").onclick=resetEncounter;
+$("#headerHome").onclick=$("#backHome").onclick=$("#noteHome").onclick=$("#toolsHome").onclick=()=>show("home");$("#openTools").onclick=()=>show("tools");$("#noteBack").onclick=()=>show("module");$("#clearEncounter").onclick=resetEncounter;
 $("#copyNote").onclick=async()=>{try{await navigator.clipboard.writeText($("#noteText").value);alert("Clinical note copied.")}catch(e){$("#noteText").select();document.execCommand("copy");alert("Clinical note copied.")}};
 $("#shareNote").onclick=async()=>{const text=$("#noteText").value;if(navigator.share)await navigator.share({title:"AMS Clinical Note",text});else{await navigator.clipboard.writeText(text);alert("Sharing unavailable; note copied.")}};
 function printClinicalNote(){
