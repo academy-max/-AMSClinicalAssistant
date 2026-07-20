@@ -20,3 +20,10 @@ This is educational decision support. Institutional pharmacy and medical leaders
 
 PASS — Print / Save PDF button repaired with dedicated print document and fallback.
 PASS — Service-worker cache version updated so the correction replaces the installed version.
+
+MODULE 12 REVIEW (2026-07-19)
+PASS — Generate current encounter note opens the note view.
+PASS — Decision-trail counter reflects the current encounter.
+PASS — Clear decision trail resets count and last assessment text.
+PASS — Clear button is disabled when there are no entries.
+PASS — Visible status confirmation after clearing.
