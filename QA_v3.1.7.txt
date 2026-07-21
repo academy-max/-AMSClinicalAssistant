@@ -1,0 +1,12 @@
+AMS Clinical Assistant v3.1.7 — Restored Syndrome Tree
+
+Verified design targets:
+- Home remains limited to 3 primary buttons.
+- New Infection opens system categories, then detailed syndrome submenus.
+- Urinary: lower UTI/cystitis, pyelonephritis/complicated UTI, CAUTI, asymptomatic bacteriuria.
+- Respiratory: pneumonia, bronchopneumonia, acute bronchitis, aspiration, COPD exacerbation, COVID/viral illness, laryngotracheitis/upper-airway illness.
+- Skin/wound: cellulitis, pressure injury/deep wound, abscess, chronic wound without infection.
+- GI: viral gastroenteritis, bacterial diarrhea, foodborne illness, C. difficile, noninfectious diarrhea.
+- Non-antibiotic syndromes do not open antibiotic selection automatically.
+- Selected syndrome is stored for note generation.
+- Existing antibiotic library, final note, and Print/Save PDF preserved.
