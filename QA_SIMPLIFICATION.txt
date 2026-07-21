@@ -1,0 +1,9 @@
+AMS Clinical Assistant v3.1.4 — New Infection simplification
+
+Verified changes:
+1. New Infection preserves the selected syndrome.
+2. Antibiotic Management Center opens the matching syndrome algorithm automatically.
+3. Redundant Search Antibiotic and Open syndrome algorithm controls are not displayed in the guided New Infection flow.
+4. The main SEARCH ANTIBIOTIC button retains full search and syndrome selection.
+5. Nonspecific change does not automatically direct to antibiotic therapy.
+6. Print/Save PDF fix from v3.1.2 is retained.

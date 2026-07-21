@@ -1,0 +1,14 @@
+AMS Clinical Assistant v3.1.2 — Print Fix QA
+
+PASS: Home screen remains exactly three primary buttons.
+PASS: Existing 12 modules remain available through Clinical Tools.
+PASS: Clinical note generation still writes into #noteText.
+PASS: Print button copies the current note into a dedicated #printSheet.
+PASS: Printing now uses window.print() on the visible document, avoiding hidden iframe behavior on iOS Safari/PWA.
+PASS: Print-only CSS hides the application and exposes the full note with preserved line breaks.
+PASS: Empty-note printing is blocked with a clear message.
+PASS: JavaScript syntax validated with Node.js.
+PASS: Service worker syntax validated and cache key changed to v3.1.2.
+PASS: Manifest JSON validated and start URL updated to ?v=3.1.2.
+
+Deployment note: replace every existing repository file with this package, then open the GitHub Pages URL using ?v=3.1.2. If installed as a PWA, close and reopen it after deployment.

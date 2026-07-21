@@ -1,0 +1,13 @@
+AMS Clinical Assistant v3.1.4 — Final Simplification QA
+
+Verified changes:
+- Home displays exactly three primary buttons.
+- NEW INFECTION opens Module 1.
+- ANTIBIOTIC REVIEW opens Module 6.
+- SEARCH ANTIBIOTIC opens a single live search field.
+- Removed redundant syndrome selector, Open Syndrome Algorithm control, and Show All Antibiotics control from standalone search.
+- New Infection still opens the selected syndrome algorithm and relevant antibiotic options automatically.
+- Nonspecific change does not route automatically to antibiotics.
+- Print / Save PDF correction retained.
+- Clinical Tools retains all 12 modules.
+- Version and cache updated to v3.1.4.

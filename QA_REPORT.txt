@@ -1,13 +1,17 @@
-AMS Clinical Assistant v3.1 — VERIFIED THREE-BUTTON HOME
+AMS Clinical Assistant v3.1 — FINAL AUDIT
 
-PASS — Home contains exactly 3 buttons.
-PASS — No module cards exist inside the Home section.
-PASS — NEW INFECTION opens Module 1.
-PASS — ANTIBIOTIC REVIEW opens Module 6.
-PASS — SEARCH ANTIBIOTIC opens Module 3.
-PASS — JavaScript syntax validation with Node.js.
-PASS — All 12 clinical modules retained in a secondary Clinical Tools screen.
-PASS — Service-worker cache version changed to force replacement of older pages.
-PASS — GitHub Pages relative paths retained.
+PASS — Home contains exactly 3 visible clinical buttons.
+PASS — NEW INFECTION is connected to Module 1.
+PASS — ANTIBIOTIC REVIEW is connected to Module 6.
+PASS — SEARCH ANTIBIOTIC is connected to Module 3.
+PASS — No 12-module card grid is present on the opening screen.
+PASS — All 12 clinical modules remain in the secondary Clinical Tools screen.
+PASS — All 12 module renderer functions are present.
+PASS — JavaScript syntax validation completed with Node.js.
+PASS — Service worker syntax and cache version validated.
+PASS — Manifest and 192/512 icons are included.
+PASS — Clinical note version corrected to v3.1.
+PASS — Relative file paths are compatible with GitHub Pages.
 
-Important: after publishing, uninstall/delete any old Home Screen icon and first open the website in a Safari Private tab to avoid an older service-worker copy.
+DEPLOYMENT NOTE
+A published GitHub Pages site can still show an older cached build until all root files are replaced and the previous installed Home Screen version/service worker is cleared.
