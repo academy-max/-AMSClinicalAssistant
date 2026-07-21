@@ -1,0 +1,17 @@
+AMS Clinical Assistant v3.1.6 — targeted clinical QA
+
+Verified corrections:
+1. New Infection > Skin / wound now offers:
+   - Cellulitis / SSTI
+   - Pressure injury / deep wound
+   - Abscess / purulent infection
+   - Chronic wound without infection
+2. Pressure injury / deep wound opens its dedicated algorithm and antibiotic list.
+3. Respiratory maps to the existing Pneumonia algorithm.
+4. GI / diarrhea maps to the existing C. difficile algorithm.
+5. Starting NEW INFECTION clears the previous clinical decision trail.
+6. The active syndrome is stored separately and printed in the SBAR Assessment.
+7. Selecting cellulitis generates a cellulitis/SSTI note, not a UTI note.
+8. The selected antibiotic entry includes the active indication/syndrome.
+9. Print remains available after Finish consultation / Generate note.
+10. Service-worker cache updated to v3.1.6.
