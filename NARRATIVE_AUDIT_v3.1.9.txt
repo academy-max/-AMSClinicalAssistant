@@ -1,0 +1,20 @@
+AMS Clinical Assistant v3.1.9 — Narrative Audit
+
+Scope: user-facing narrative only.
+Unchanged: clinical algorithms, syndrome routes, antibiotic database, doses, renal guidance, interactions, navigation, PWA structure, and no-note workflow.
+
+Editorial standard applied:
+- Short, direct questions
+- Action-first recommendations
+- Plain clinical English
+- Clear escalation language
+- Adult-learning focus: what is happening, what to do, when to escalate
+- Reduced bureaucratic and repetitive wording
+
+Technical checks:
+- Exactly three primary home buttons
+- 25 antibiotic records retained
+- Urinary, respiratory, skin/wound, GI and nonspecific pathways retained
+- Pressure injury/deep wound retained
+- Note, SBAR, copy and print functions remain absent
+- JavaScript syntax validated

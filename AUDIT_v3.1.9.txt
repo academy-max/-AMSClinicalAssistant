@@ -1,0 +1,20 @@
+AMS Clinical Assistant™ v3.1.9 — Source Code Audit
+
+Scope
+- Started from restored syndrome tree v3.1.7.
+- Removed clinical note/SBAR creation only.
+- Preserved all syndrome algorithms, antibiotic lists, monographs, renal safety, timeout, and advanced tools.
+
+Verified changes
+- No note view, SBAR generator, copy, share, print, or PDF code remains.
+- No workflow button routes to documentation generation.
+- Final workflow actions are Start New Patient and Home.
+- Antibiotic monographs end with Finish Review and a final clinical reminder.
+- Module 12 is now AMS Metrics & Quality Improvement rather than Documentation.
+- Service-worker cache updated to v3.1.9.
+
+Clinical tree preserved
+- Urinary: cystitis, pyelonephritis/complicated UTI, CAUTI, asymptomatic bacteriuria.
+- Respiratory: pneumonia, bronchopneumonia, bronchitis, aspiration, COPD exacerbation, COVID/viral respiratory infection, laryngotracheitis.
+- Skin/wound: cellulitis, pressure injury/deep wound, abscess, chronic wound without infection.
+- GI/diarrhea: viral, bacterial, foodborne illness, C. difficile, medication/laxative/tube-feed causes.
